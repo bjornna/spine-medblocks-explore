@@ -1,0 +1,1819 @@
+{
+  "templateId" : "egenvurdering_rygg_v01",
+  "version" : "2.3",
+  "defaultLanguage" : "nb",
+  "languages" : [ "en", "nb" ],
+  "tree" : {
+    "id" : "spørreskjema_for_pasienter_som_skal_opereres_i_ryggen",
+    "name" : "Spørreskjema for pasienter som skal opereres i ryggen",
+    "localizedName" : "Spørreskjema for pasienter som skal opereres i ryggen",
+    "rmType" : "COMPOSITION",
+    "nodeId" : "openEHR-EHR-COMPOSITION.report.v1",
+    "min" : 1,
+    "max" : 1,
+    "localizedNames" : {
+      "en" : "egenvurdering_rygg_v01",
+      "nb" : "Spørreskjema for pasienter som skal opereres i ryggen"
+    },
+    "localizedDescriptions" : {
+      "en" : "Document to communicate information to others, commonly in response to a request from another party.",
+      "nb" : "Dokument som brukes for å kommunisere informasjon til andre, ofte som svar på en forespørsel."
+    },
+    "aqlPath" : "",
+    "children" : [ {
+      "id" : "context",
+      "rmType" : "EVENT_CONTEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/context",
+      "children" : [ {
+        "id" : "rapport_id",
+        "name" : "Rapport ID",
+        "localizedName" : "Rapport ID",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0002",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Report ID",
+          "nb" : "Rapport ID"
+        },
+        "localizedDescriptions" : {
+          "en" : "Identification information about the report.",
+          "nb" : "Informasjon som identifiserer rapporten."
+        },
+        "aqlPath" : "/context/other_context[at0001]/items[at0002]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "status",
+        "name" : "Status",
+        "localizedName" : "Status",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0005",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Status",
+          "nb" : "Status"
+        },
+        "localizedDescriptions" : {
+          "en" : "The status of the entire report. Note: This is not the status of any of the report components.",
+          "nb" : "Status for hele rapporten. Merk: Dette er ikke statusen for noen av enkeltkomponentene i rapporten."
+        },
+        "aqlPath" : "/context/other_context[at0001]/items[at0005]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      } ]
+    }, {
+      "id" : "funksjonsskår_oswestry",
+      "name" : "Funksjonsskår (Oswestry)",
+      "localizedName" : "Funksjonsskår (Oswestry)",
+      "rmType" : "OBSERVATION",
+      "nodeId" : "openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "Oswestry Low Back Pain Disability Questionnaire (ODI)",
+        "nb" : "Funksjonsskår (Oswestry)"
+      },
+      "localizedDescriptions" : {
+        "en" : "Oswestry Low Back Pain Disability Questionnaire.",
+        "nb" : "Oswestry Low Back Pain Disability Questionnaire (ODI)"
+      },
+      "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]",
+      "children" : [ {
+        "id" : "a1._smerte",
+        "name" : "1. Smerte",
+        "localizedName" : "1. Smerte",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0004",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Pain Intensity",
+          "nb" : "1. Smerte"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported lower back pain intensity.",
+          "nb" : "*Patient-reported lower back pain intensity. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 1 - Pain intensity (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0009",
+            "label" : "Jeg har ingen smerter for øyeblikket",
+            "localizedLabels" : {
+              "en" : "I have no pain at the moment",
+              "nb" : "Jeg har ingen smerter for øyeblikket"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has no pain at the moment.",
+              "nb" : "*The patient has no pain at the moment. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0050",
+            "label" : "Smertene er veldig svake for øyblikket",
+            "localizedLabels" : {
+              "en" : "The pain is very mild at the moment",
+              "nb" : "Smertene er veldig svake for øyblikket"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has very mild pain at the moment.",
+              "nb" : "*The patient has very mild pain at the moment. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0051",
+            "label" : "Smertene er moderate for øyeblikket",
+            "localizedLabels" : {
+              "en" : "The pain is moderate at the moment",
+              "nb" : "Smertene er moderate for øyeblikket"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has moderate pain at the moment.",
+              "nb" : "*The patient has moderate pain at the moment. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0052",
+            "label" : "Smertene er temmelig sterke for øyeblikket",
+            "localizedLabels" : {
+              "en" : "The pain is fairly severe at the moment",
+              "nb" : "Smertene er temmelig sterke for øyeblikket"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has fairly severe pain at the moment.",
+              "nb" : "*The patient has fairly severe pain at the moment. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0098",
+            "label" : "Smertene er veldig sterke for øyeblikket",
+            "localizedLabels" : {
+              "en" : "The pain is very severe at the moment",
+              "nb" : "Smertene er veldig sterke for øyeblikket"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has very severe pain at the moment.",
+              "nb" : "*The patient has very severe pain at the moment. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0099",
+            "label" : "Smertene er det verst tenkelige for øyeblikket",
+            "localizedLabels" : {
+              "en" : "The pain is the worst imaginable at the moment",
+              "nb" : "Smertene er det verst tenkelige for øyeblikket"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has the worst imaginable pain at the moment.",
+              "nb" : "*The patient has the worst imaginable pain at the moment. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a2._personlig_stell",
+        "name" : "2. Personlig stell",
+        "localizedName" : "2. Personlig stell",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0053",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Personal care",
+          "nb" : "2. Personlig stell"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability of personal care (washing, dressing etc) due to lower back pain.",
+          "nb" : "*Patient-reported ability of personal care (washing, dressing etc) due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 2 – Personal care (washing, dressing etc) (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0053]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0054",
+            "label" : "Jeg kan stelle meg selv på vanlig måte uten at det forårsaker ekstra smerter",
+            "localizedLabels" : {
+              "en" : "I can look after myself normally without causing extra pain",
+              "nb" : "Jeg kan stelle meg selv på vanlig måte uten at det forårsaker ekstra smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can look after their self without causing extra pain.",
+              "nb" : "*The patient can look after their self without causing extra pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0055",
+            "label" : "Jeg kan stelle meg selv på vanlig måte, men det er veldig smertefullt",
+            "localizedLabels" : {
+              "en" : "I can look after myself normally but it causes extra pain",
+              "nb" : "Jeg kan stelle meg selv på vanlig måte, men det er veldig smertefullt"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can look after their self normally but it causes extra pain.",
+              "nb" : "*The patient can look after their self normally but it causes extra pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0056",
+            "label" : "Det er smertefullt å stelle seg selv, og jeg gjør det langsomt og forsiktig",
+            "localizedLabels" : {
+              "en" : "It is painful to look after myself and I am slow and careful",
+              "nb" : "Det er smertefullt å stelle seg selv, og jeg gjør det langsomt og forsiktig"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient finds it painful to look after their self and are slow and careful doing so.",
+              "nb" : "*The patient finds it painful to look after their self and are slow and careful doing so. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0057",
+            "label" : "Jeg trenger noe hjelp, men klarer det meste av mitt personlige stell",
+            "localizedLabels" : {
+              "en" : "I need some help but manage most of my personal care",
+              "nb" : "Jeg trenger noe hjelp, men klarer det meste av mitt personlige stell"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient needs some help but manages most of their personal care.",
+              "nb" : "*The patient needs some help but manages most of their personal care. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0100",
+            "label" : "Jeg trenger hjelp hver dag i de fleste aspekter av egenomsorg",
+            "localizedLabels" : {
+              "en" : "I need help every day in most aspects of self care",
+              "nb" : "Jeg trenger hjelp hver dag i de fleste aspekter av egenomsorg"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient needs help every day in most aspects of self care.",
+              "nb" : "*The patient needs help every day in most aspects of self care. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0101",
+            "label" : "Jeg kler meg ikke, jeg vasker meg med vanskeligheter og blir i sengen",
+            "localizedLabels" : {
+              "en" : "I do not get dressed, I wash with difficulty and stay in bed",
+              "nb" : "Jeg kler meg ikke, jeg vasker meg med vanskeligheter og blir i sengen"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient does not get dressed, they wash with difficulty and stay in bed.",
+              "nb" : "*The patient does not get dressed, they wash with difficulty and stay in bed. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a3._å_løfte",
+        "name" : "3. Å løfte",
+        "localizedName" : "3. Å løfte",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0058",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Lifting",
+          "nb" : "3. Å løfte"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability to lift heavy weights due to lower back pain.",
+          "nb" : "*Patient-reported ability to lift heavy weights due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 3 – Lifting (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0058]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0059",
+            "label" : "Jeg kan løfte tunge ting uten å få mer smerter",
+            "localizedLabels" : {
+              "en" : "I can lift heavy weights without extra pain",
+              "nb" : "Jeg kan løfte tunge ting uten å få mer smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can lift heavy weights without extra pain.",
+              "nb" : "*The patient can lift heavy weights without extra pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0060",
+            "label" : "Jeg kan løfte tunge ting, men får smerter",
+            "localizedLabels" : {
+              "en" : "I can lift heavy weights but it gives extra pain",
+              "nb" : "Jeg kan løfte tunge ting, men får smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can lift heavy weights but it gives extra pain.",
+              "nb" : "*The patient can lift heavy weights but it gives extra pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0061",
+            "label" : "Smerter hindrer meg i å løfte tunge ting opp fra gulvet, men jeg greier det hvis det som skal løftes er gunstig plassert, for eksempel på et bord",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from lifting heavy weights off the floor, but I can manage if they are conveniently placed eg. on a table",
+              "nb" : "Smerter hindrer meg i å løfte tunge ting opp fra gulvet, men jeg greier det hvis det som skal løftes er gunstig plassert, for eksempel på et bord"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from lifting heavy weights off the floor, but they can manage if they are conveniently placed eg. on a table.",
+              "nb" : "*Pain prevents the patient from lifting heavy weights off the floor, but they can manage if they are conveniently placed eg. on a table. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0062",
+            "label" : "Smerter hindrer meg i å løfte tunge ting, men jeg klarer lette og middels tunge ting, hvis det er gunstig plassert",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from lifting heavy weights, but I can manage light to medium weights if they are conveniently positioned",
+              "nb" : "Smerter hindrer meg i å løfte tunge ting, men jeg klarer lette og middels tunge ting, hvis det er gunstig plassert"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from lifting heavy weights, but they can manage light to medium weights if they are conveniently positioned.",
+              "nb" : "*Pain prevents the patient from lifting heavy weights, but they can manage light to medium weights if they are conveniently positioned. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0102",
+            "label" : "Jeg kan bare løfte veldig lette vekter",
+            "localizedLabels" : {
+              "en" : "I can only lift very light weights",
+              "nb" : "Jeg kan bare løfte veldig lette vekter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can only lift very light weights.",
+              "nb" : "*The patient can only lift very light weights. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0103",
+            "label" : "Jeg kan ikke løfte eller bære noe",
+            "localizedLabels" : {
+              "en" : "I cannot lift or carry anything",
+              "nb" : "Jeg kan ikke løfte eller bære noe"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient cannot lift or carry anything.",
+              "nb" : "*The patient cannot lift or carry anything. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a4._å_gå",
+        "name" : "4. Å gå",
+        "localizedName" : "4. Å gå",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0063",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Walking",
+          "nb" : "4. Å gå"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability to walk due to lower back pain.",
+          "nb" : "*Patient-reported ability to walk due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 4 – Walking* (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0063]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0064",
+            "label" : "Smerter hindrer meg ikke i å gå i det hele tatt",
+            "localizedLabels" : {
+              "en" : "Pain does not prevent me walking any distance",
+              "nb" : "Smerter hindrer meg ikke i å gå i det hele tatt"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain does not prevent the patient walking any distance.",
+              "nb" : "*Pain does not prevent the patient walking any distance. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0065",
+            "label" : "Smerter hindrer meg i å gå mer enn 1 1/2 km",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from walking more than 1 mile",
+              "nb" : "Smerter hindrer meg i å gå mer enn 1 1/2 km"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from walking more than 1 mile.",
+              "nb" : "*Pain prevents the patient from walking more than 1 mile. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0066",
+            "label" : "Smerter hindrer meg i å gå mer enn 3/4 km",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from walking more than 1/2 mile",
+              "nb" : "Smerter hindrer meg i å gå mer enn 3/4 km"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from walking more than 1/2 mile.",
+              "nb" : "*Pain prevents the patient from walking more than 1/2 mile. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0067",
+            "label" : "Smerter hindrer meg i å gå mer enn 100 m",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from walking more than 100 yards",
+              "nb" : "Smerter hindrer meg i å gå mer enn 100 m"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from walking more than 100 yards.",
+              "nb" : "*Pain prevents the patient from walking more than 100 yards. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0104",
+            "label" : "Jeg kan bare gå med en stokk eller krykker",
+            "localizedLabels" : {
+              "en" : "I can only walk using a stick or crutches",
+              "nb" : "Jeg kan bare gå med en stokk eller krykker"
+            },
+            "localizedDescriptions" : {
+              "en" : "Patient can only walk using a stick or crutches.",
+              "nb" : "*Patient can only walk using a stick or crutches. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0105",
+            "label" : "Jeg er i sengen mesteparten av tiden",
+            "localizedLabels" : {
+              "en" : "I am in bed most of the time",
+              "nb" : "Jeg er i sengen mesteparten av tiden"
+            },
+            "localizedDescriptions" : {
+              "en" : "Patient is in bed most of the time.",
+              "nb" : "*Patient is in bed most of the time. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a5._å_sitte",
+        "name" : "5. Å sitte",
+        "localizedName" : "5. Å sitte",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0068",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Sitting",
+          "nb" : "5. Å sitte"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability to sit due to lower back pain.",
+          "nb" : "*Patient-reported ability to sit due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 5 – Sitting (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0068]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0069",
+            "label" : "Jeg kan sitte så lenge jeg vil i en hvilken som helst stol",
+            "localizedLabels" : {
+              "en" : "I can sit in any chair as long as I like",
+              "nb" : "Jeg kan sitte så lenge jeg vil i en hvilken som helst stol"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can sit in any chair as long as they like.",
+              "nb" : "*The patient can sit in any chair as long as they like. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0070",
+            "label" : "Jeg kan sitte så lenge jeg vil i min favorittstol",
+            "localizedLabels" : {
+              "en" : "I can only sit in my favourite chair as long as I like",
+              "nb" : "Jeg kan sitte så lenge jeg vil i min favorittstol"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can only sit in their favourite chair as long as they like.",
+              "nb" : "*The patient can only sit in their favourite chair as long as they like. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0071",
+            "label" : "Smerter hindrer meg i å sitte mer enn en time",
+            "localizedLabels" : {
+              "en" : "Pain prevents me sitting more than one hour",
+              "nb" : "Smerter hindrer meg i å sitte mer enn en time"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from sitting more than one hour.",
+              "nb" : "*Pain prevents the patient from sitting more than one hour. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0072",
+            "label" : "Smerte hindrer meg i å  sitte mer enn en halv time",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from sitting more than 30 minutes",
+              "nb" : "Smerte hindrer meg i å  sitte mer enn en halv time"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from sitting more than 30 minutes.",
+              "nb" : "*Pain prevents the patient from sitting more than 30 minutes. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0106",
+            "label" : "Smerte hindrer meg i å sitte mer enn ti minutter",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from sitting more than 10 minutes",
+              "nb" : "Smerte hindrer meg i å sitte mer enn ti minutter"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from sitting more than 10 minutes.",
+              "nb" : "*Pain prevents the patient from sitting more than 10 minutes. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0107",
+            "label" : "Smerter hindrer meg i å sitte i det hele tatt",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from sitting at all",
+              "nb" : "Smerter hindrer meg i å sitte i det hele tatt"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from sitting at all.",
+              "nb" : "*Pain prevents the patient from sitting at all. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a6._å_stå",
+        "name" : "6. Å stå",
+        "localizedName" : "6. Å stå",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0078",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Standing",
+          "nb" : "6. Å stå"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability to stand due to lower back pain.",
+          "nb" : "*Patient-reported ability to stand due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 6 – Standing\r\n (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0078]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0079",
+            "label" : "Jeg kan stå så lenge jeg vil uten å få mer smerter",
+            "localizedLabels" : {
+              "en" : "I can stand as long as I want without extra pain",
+              "nb" : "Jeg kan stå så lenge jeg vil uten å få mer smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can stand as long as they want without extra pain.",
+              "nb" : "*The patient can stand as long as they want without extra pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0080",
+            "label" : "Jeg kan stå så lenge jeg vil, men får smerter",
+            "localizedLabels" : {
+              "en" : "I can stand as long as I want but it gives me extra pain",
+              "nb" : "Jeg kan stå så lenge jeg vil, men får smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can stand as long as they want but it gives me extra pain.",
+              "nb" : "*The patient can stand as long as they want but it gives me extra pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0081",
+            "label" : "Smerter hindrer meg i å stå mer enn en time",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from standing for more than 1 hour",
+              "nb" : "Smerter hindrer meg i å stå mer enn en time"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from standing for more than 1 hour.",
+              "nb" : "*Pain prevents the patient from standing for more than 1 hour. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0082",
+            "label" : "Smerter hindrer meg i å stå mer enn en halv time",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from standing for more than 30 minutes",
+              "nb" : "Smerter hindrer meg i å stå mer enn en halv time"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from standing for more than 30 minutes.",
+              "nb" : "*Pain prevents the patient from standing for more than 30 minutes. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0108",
+            "label" : "Smerte hindrer meg i å stå i mer enn ti minutter",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from standing for more than 10 minutes",
+              "nb" : "Smerte hindrer meg i å stå i mer enn ti minutter"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from standing for more than 10 minutes.",
+              "nb" : "*Pain prevents the patient from standing for more than 10 minutes. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0109",
+            "label" : "Smerter hindrer meg i å stå i det hele tatt",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from standing at all",
+              "nb" : "Smerter hindrer meg i å stå i det hele tatt"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from standing at all.",
+              "nb" : "*Pain prevents the patient from standing at all. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a7._å_sove",
+        "name" : "7. Å sove",
+        "localizedName" : "7. Å sove",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0073",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Sleeping",
+          "nb" : "7. Å sove"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability to sleep due to lower back pain.",
+          "nb" : "*Patient-reported ability to sleep due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 7 – Sleeping (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0073]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0074",
+            "label" : "Søvnen min forstyrres aldri av smerter",
+            "localizedLabels" : {
+              "en" : "My sleep is never disturbed by pain",
+              "nb" : "Søvnen min forstyrres aldri av smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's sleep is never disturbed by pain.",
+              "nb" : "*The patient's sleep is never disturbed by pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0075",
+            "label" : "Søvnen min forstyrres av og til av smerter",
+            "localizedLabels" : {
+              "en" : "My sleep is occasionally disturbed by pain",
+              "nb" : "Søvnen min forstyrres av og til av smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's is occasionally disturbed by pain.",
+              "nb" : "*The patient's is occasionally disturbed by pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0076",
+            "label" : "På grunn av smerter får jeg mindre enn seks timers søvn",
+            "localizedLabels" : {
+              "en" : "Because of pain I have less than 6 hours sleep",
+              "nb" : "På grunn av smerter får jeg mindre enn seks timers søvn"
+            },
+            "localizedDescriptions" : {
+              "en" : "Because of pain the patient has less than 6 hours sleep.",
+              "nb" : "*Because of pain the patient has less than 6 hours sleep. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0077",
+            "label" : "På grunn av smerter får jeg mindre enn fire timers søvn",
+            "localizedLabels" : {
+              "en" : "Because of pain I have less than 4 hours sleep",
+              "nb" : "På grunn av smerter får jeg mindre enn fire timers søvn"
+            },
+            "localizedDescriptions" : {
+              "en" : "Because of pain the patient has less than 4 hours sleep.",
+              "nb" : "*Because of pain the patient has less than 4 hours sleep. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0110",
+            "label" : "På grunn av smerter får jeg mindre enn to timers søvn",
+            "localizedLabels" : {
+              "en" : "Because of pain I have less than 2 hours sleep",
+              "nb" : "På grunn av smerter får jeg mindre enn to timers søvn"
+            },
+            "localizedDescriptions" : {
+              "en" : "Because of pain the patient has less than 2 hours sleep.",
+              "nb" : "*Because of pain the patient has less than 2 hours sleep. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0111",
+            "label" : "Smerter hindrer all søvn",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from sleeping at all",
+              "nb" : "Smerter hindrer all søvn"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from sleeping at all.",
+              "nb" : "*Pain prevents the patient from sleeping at all. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a8._seksualliv",
+        "name" : "8. Seksualliv",
+        "localizedName" : "8. Seksualliv",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0083",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Sex life",
+          "nb" : "8. Seksualliv"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported impact on sex life due to back pain.",
+          "nb" : "*Patient-reported impact on sex life due to back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 8 – Sex life (if applicable) (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0083]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0084",
+            "label" : "Seksuallivet mitt er normalt og forårsaker ikke mer smerter",
+            "localizedLabels" : {
+              "en" : "My sex life is normal and causes no extra pain",
+              "nb" : "Seksuallivet mitt er normalt og forårsaker ikke mer smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's sex life is normal and causes no extra pain.",
+              "nb" : "*The patient's sex life is normal and causes no extra pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0085",
+            "label" : "Seksuallivet mitt er normalt, men forårsaker noe mer smerter",
+            "localizedLabels" : {
+              "en" : "My sex life is normal but causes some extra pain",
+              "nb" : "Seksuallivet mitt er normalt, men forårsaker noe mer smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's sex life is normal but causes some extra pain.",
+              "nb" : "*The patient's sex life is normal but causes some extra pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0086",
+            "label" : "Seksuallivet mitt er (nesten) normalt, men svært smertefult",
+            "localizedLabels" : {
+              "en" : "My sex life is nearly normal but is very painful",
+              "nb" : "Seksuallivet mitt er (nesten) normalt, men svært smertefult"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's sex life is nearly normal but is very painful.",
+              "nb" : "*The patient's sex life is nearly normal but is very painful. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0087",
+            "label" : "Seksuallivet mitt er svært begrenset på grunn av smerter",
+            "localizedLabels" : {
+              "en" : "My sex life is severely restricted by pain",
+              "nb" : "Seksuallivet mitt er svært begrenset på grunn av smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's sex life is severely restricted by pain.",
+              "nb" : "*The patient's sex life is severely restricted by pain. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0112",
+            "label" : "Seksuallivet mitt er nesten borte på grunn av smerter",
+            "localizedLabels" : {
+              "en" : "My sex life is nearly absent because of pain",
+              "nb" : "Seksuallivet mitt er nesten borte på grunn av smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's sex life is nearly absent because of pain.",
+              "nb" : "*The patient's sex life is nearly absent because of pain. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0113",
+            "label" : "Smerter forhindrer alt seksualliv",
+            "localizedLabels" : {
+              "en" : "Pain prevents any sex life at all",
+              "nb" : "Smerter forhindrer alt seksualliv"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents any sex life at all for the patient.",
+              "nb" : "*Pain prevents any sex life at all for the patient. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a9._sosialt_liv_omgang_med_venner_og_kjente",
+        "name" : "9. Sosialt liv (omgang med venner og kjente)",
+        "localizedName" : "9. Sosialt liv (omgang med venner og kjente)",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0088",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Social life",
+          "nb" : "9. Sosialt liv (omgang med venner og kjente)"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported impact on social life due to lower back pain.",
+          "nb" : "*Patient-reported impact on social life due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 9 – Social life (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0088]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0089",
+            "label" : "Det sosiale livet mitt er normalt og forårsaker ikke mer smerter",
+            "localizedLabels" : {
+              "en" : "My social life is normal and gives me no extra pain",
+              "nb" : "Det sosiale livet mitt er normalt og forårsaker ikke mer smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's social life is normal and gives me no extra pain.",
+              "nb" : "*The patient's social life is normal and gives me no extra pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0090",
+            "label" : "Det sosiale livet mitt er normalt, men øker graden av smerter",
+            "localizedLabels" : {
+              "en" : "My social life is normal but increases the degree of pain",
+              "nb" : "Det sosiale livet mitt er normalt, men øker graden av smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient's social life is normal but increases the degree of pain.",
+              "nb" : "*The patient's social life is normal but increases the degree of pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0091",
+            "label" : "Smerter har ingen betydelig innvirkning på mitt sosiale liv, bortsett fra at det begrenser mine fysisk aktive sider, som sport osv.",
+            "localizedLabels" : {
+              "en" : "Pain has no significant effect on my social life apart from limiting my more energetic interests eg. sport",
+              "nb" : "Smerter har ingen betydelig innvirkning på mitt sosiale liv, bortsett fra at det begrenser mine fysisk aktive sider, som sport osv."
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain has no significant effect on the patient's social life apart from limiting their more energetic interests eg. sport.",
+              "nb" : "*Pain has no significant effect on the patient's social life apart from limiting their more energetic interests eg. sport. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0092",
+            "label" : "Smerter har begrenset mitt sosiale liv, og jeg går ikke ut så ofte",
+            "localizedLabels" : {
+              "en" : "Pain has restricted my social life and I do not go out as often",
+              "nb" : "Smerter har begrenset mitt sosiale liv, og jeg går ikke ut så ofte"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain has restricted the patient's social life and they do not go out as often.",
+              "nb" : "*Pain has restricted the patient's social life and they do not go out as often. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0114",
+            "label" : "Smerter har begrenst mitt sosiale liv til hjemmet",
+            "localizedLabels" : {
+              "en" : "Pain has restricted my social life to my home",
+              "nb" : "Smerter har begrenst mitt sosiale liv til hjemmet"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain has restricted the patient's social life to their home.",
+              "nb" : "*Pain has restricted the patient's social life to their home. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0115",
+            "label" : "På grunn av smerter har jeg ikke noe sosialt liv",
+            "localizedLabels" : {
+              "en" : "I have no social life because of pain",
+              "nb" : "På grunn av smerter har jeg ikke noe sosialt liv"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient has no social life because of pain.",
+              "nb" : "*The patient has no social life because of pain. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "a10._å_reise",
+        "name" : "10. Å reise",
+        "localizedName" : "10. Å reise",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0093",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Travelling",
+          "nb" : "10. Å reise"
+        },
+        "localizedDescriptions" : {
+          "en" : "Patient-reported ability to travel due to lower back pain.",
+          "nb" : "*Patient-reported ability to travel due to lower back pain. (en)"
+        },
+        "annotations" : {
+          "comment" : "*Questionnaire wording: \r\nSection 10 – Travelling (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0093]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0094",
+            "label" : "Jeg kan reise hvor som helst uten smerter",
+            "localizedLabels" : {
+              "en" : "I can travel anywhere without pain",
+              "nb" : "Jeg kan reise hvor som helst uten smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can travel anywhere without pain.",
+              "nb" : "*The patient can travel anywhere without pain. (en)"
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0095",
+            "label" : "Jeg kan reise hvor som helst, men det gir mer smerter",
+            "localizedLabels" : {
+              "en" : "I can travel anywhere but it gives me extra pain",
+              "nb" : "Jeg kan reise hvor som helst, men det gir mer smerter"
+            },
+            "localizedDescriptions" : {
+              "en" : "The patient can travel anywhere but it gives me extra pain.",
+              "nb" : "*The patient can travel anywhere but it gives me extra pain. (en)"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0096",
+            "label" : "Smertene er ille, men jeg klarer reiser på to timer",
+            "localizedLabels" : {
+              "en" : "Pain is bad but I manage journeys over two hours",
+              "nb" : "Smertene er ille, men jeg klarer reiser på to timer"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain is bad but the patient can manage journeys over two hours.",
+              "nb" : "*Pain is bad but the patient can manage journeys over two hours. (en)"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0097",
+            "label" : "Smerter begrenser meg til korte reiser på under en time",
+            "localizedLabels" : {
+              "en" : "Pain restricts me to journeys of less than one hour",
+              "nb" : "Smerter begrenser meg til korte reiser på under en time"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain restricts the patient to journeys of less than one hour.",
+              "nb" : "*Pain restricts the patient to journeys of less than one hour. (en)"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0116",
+            "label" : "Smerter begrenser meg til korte, nødvendige reiser på under 30 minutter",
+            "localizedLabels" : {
+              "en" : "Pain restricts me to short necessary journeys under 30 minutes",
+              "nb" : "Smerter begrenser meg til korte, nødvendige reiser på under 30 minutter"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain restricts the patient to short necessary journeys under 30 minutes.",
+              "nb" : "*Pain restricts the patient to short necessary journeys under 30 minutes. (en)"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0117",
+            "label" : "Smerter forhindrer meg fra å reise, unntatt for å få behandling",
+            "localizedLabels" : {
+              "en" : "Pain prevents me from travelling except to receive treatment",
+              "nb" : "Smerter forhindrer meg fra å reise, unntatt for å få behandling"
+            },
+            "localizedDescriptions" : {
+              "en" : "Pain prevents the patient from travelling except to receive treatment.",
+              "nb" : "*Pain prevents the patient from travelling except to receive treatment. (en)"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "total_skåring",
+        "name" : "Total skåring",
+        "localizedName" : "Total skåring",
+        "rmType" : "DV_COUNT",
+        "nodeId" : "at0044",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Total score",
+          "nb" : "Total skåring"
+        },
+        "localizedDescriptions" : {
+          "en" : "Total score from questions 1 to 10.",
+          "nb" : "*Total score from questions 1 to 10. (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0044]/value",
+        "inputs" : [ {
+          "type" : "INTEGER",
+          "validation" : {
+            "range" : {
+              "minOp" : ">=",
+              "min" : 0,
+              "maxOp" : "<=",
+              "max" : 100
+            }
+          }
+        } ]
+      }, {
+        "id" : "total_skåring_som_prosent",
+        "name" : "Total skåring som prosent",
+        "localizedName" : "Total skåring som prosent",
+        "rmType" : "DV_PROPORTION",
+        "nodeId" : "at0045",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Total score as percentage",
+          "nb" : "Total skåring som prosent"
+        },
+        "localizedDescriptions" : {
+          "en" : "Total score from questions 1 to 10 as a percentage.",
+          "nb" : "*Total score from questions 1 to 10 as a percentage. (en)"
+        },
+        "annotations" : {
+          "comment" : "*0% to 20%: minimal disability: The patient can cope with most living activities. Usually no treatment is\r\nindicated apart from advice on lifting sitting and exercise.\r\n21%-40%: moderate disability: The patient experiences more pain and difficulty with sitting, lifting and\r\nstanding. Travel and social life are more difficult and they may be\r\ndisabled from work. Personal care, sexual activity and sleeping are not\r\ngrossly affected and the patient can usually be managed by\r\nconservative means.\r\n41%-60%: severe disability: Pain remains the main problem in this group but activities of daily\r\nliving are affected. These patients require a detailed investigation.\r\n61%-80%: crippled: Back pain impinges on all aspects of the patient's life. Positive\r\nintervention is required.\r\n81%-100%: These patients are either bed-bound or exaggerating their symptoms. (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0045]/value",
+        "proportionTypes" : [ "percent" ],
+        "inputs" : [ {
+          "suffix" : "numerator",
+          "type" : "DECIMAL",
+          "validation" : {
+            "range" : {
+              "minOp" : ">=",
+              "min" : 0.0,
+              "maxOp" : "<=",
+              "max" : 100.0
+            }
+          }
+        }, {
+          "suffix" : "denominator",
+          "type" : "DECIMAL",
+          "validation" : {
+            "range" : {
+              "minOp" : ">=",
+              "min" : 100.0,
+              "maxOp" : "<=",
+              "max" : 100.0
+            }
+          }
+        } ]
+      }, {
+        "id" : "tolkning",
+        "name" : "Tolkning",
+        "localizedName" : "Tolkning",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0118",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "*New element(en)",
+          "nb" : "Tolkning"
+        },
+        "localizedDescriptions" : {
+          "en" : "**(en)",
+          "nb" : "*"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0118]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0119",
+            "label" : "Minimal funksjonshemming",
+            "localizedLabels" : {
+              "en" : "*new ordinal(en)",
+              "nb" : "Minimal funksjonshemming"
+            },
+            "localizedDescriptions" : {
+              "en" : "**(en)",
+              "nb" : "Pasienten kan takle de fleste levende aktiviteter. Vanligvis er ingen behandling indisert bortsett fra råd om sitteløft og trening."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0120",
+            "label" : "Moderat funksjonshemming",
+            "localizedLabels" : {
+              "en" : "*new ordinal(en)",
+              "nb" : "Moderat funksjonshemming"
+            },
+            "localizedDescriptions" : {
+              "en" : "**(en)",
+              "nb" : "Pasienten opplever mer smerte og problemer med å sitte, løfte og stå. Reise og sosialt liv er vanskeligere, og det kan de være\r\nfunksjonshemmet fra jobb. Personlig pleie, seksuell aktivitet og søvn påvirkes ikke grovt og pasienten kan vanligvis håndteres av\r\n"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0121",
+            "label" : "Alvorlig funksjonshemming",
+            "localizedLabels" : {
+              "en" : "*new ordinal(en)",
+              "nb" : "Alvorlig funksjonshemming"
+            },
+            "localizedDescriptions" : {
+              "en" : "**(en)",
+              "nb" : "Smerte er fortsatt hovedproblemet i denne gruppen, men dagliglivets aktiviteter påvirkes. Disse pasientene krever en detaljert utredning"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0122",
+            "label" : "Forkrøpet",
+            "localizedLabels" : {
+              "en" : "*new ordinal(en)",
+              "nb" : "Forkrøpet"
+            },
+            "localizedDescriptions" : {
+              "en" : "**(en)",
+              "nb" : "Ryggsmerter påvirker alle aspekter av pasientens liv. Positiv intervensjon er nødvendig."
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0123",
+            "label" : "Sengeliggede",
+            "localizedLabels" : {
+              "en" : "*new ordinal(en)",
+              "nb" : "Sengeliggede"
+            },
+            "localizedDescriptions" : {
+              "en" : "**(en)",
+              "nb" : "Disse pasientene er enten sengeliggende eller overdriver symptomene sine"
+            },
+            "ordinal" : 4
+          } ]
+        } ]
+      }, {
+        "id" : "påvirkende_faktorer",
+        "name" : "Påvirkende faktorer",
+        "localizedName" : "Påvirkende faktorer",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0047",
+        "min" : 0,
+        "max" : -1,
+        "dependsOn" : [ "a10._å_reise", "a4._å_gå", "a7._å_sove", "a2._personlig_stell", "a9._sosialt_liv_omgang_med_venner_og_kjente", "a8._seksualliv", "tolkning", "a6._å_stå", "a3._å_løfte", "a1._smerte", "total_skåring_som_prosent", "a5._å_sitte", "total_skåring" ],
+        "localizedNames" : {
+          "en" : "Confounding factors",
+          "nb" : "Påvirkende faktorer"
+        },
+        "localizedDescriptions" : {
+          "en" : "Record any issues or factors that may impact on the score or interpretation.",
+          "nb" : "Registrer eventuelle problemer eller faktorer som kan påvirke poengsummen eller tolkningen."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/state[at0046]/items[at0047]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "time",
+        "name" : "Time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/data[at0001]/events[at0002]/time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "language",
+        "name" : "Language",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/language",
+        "inContext" : true
+      }, {
+        "id" : "encoding",
+        "name" : "Encoding",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/encoding",
+        "inContext" : true
+      }, {
+        "id" : "subject",
+        "name" : "Subject",
+        "rmType" : "PARTY_PROXY",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.oswestry_low_back_pain_disability_questionnaire.v0]/subject",
+        "inputs" : [ {
+          "suffix" : "id",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_scheme",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_namespace",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "name",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "eq-5d-5l_health_status",
+      "name" : "EQ-5D-5L Health status",
+      "localizedName" : "EQ-5D-5L Health status",
+      "rmType" : "OBSERVATION",
+      "nodeId" : "openEHR-EHR-OBSERVATION.eq_5d_5l.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "EQ-5D-5L Health status",
+        "nb" : "EQ-5D-5L Health status"
+      },
+      "localizedDescriptions" : {
+        "en" : "A standardised measure of health status to provide a simple, generic measure of health for clinical and economic appraisal.",
+        "nb" : "Et standardisert mål på helsestatus for å gi et enkelt, generisk mål på helse for klinisk og økonomisk vurdering."
+      },
+      "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]",
+      "children" : [ {
+        "id" : "mobilitet",
+        "name" : "Mobilitet",
+        "localizedName" : "Mobilitet",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0004",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Mobility",
+          "nb" : "Mobilitet"
+        },
+        "localizedDescriptions" : {
+          "en" : "Issues with mobility.",
+          "nb" : "Problemer med mobilitet"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0005",
+            "label" : "Ingen problemer",
+            "localizedLabels" : {
+              "en" : "No problems",
+              "nb" : "Ingen problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0012",
+            "label" : "Små problemer",
+            "localizedLabels" : {
+              "en" : "Slight problems",
+              "nb" : "Små problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0013",
+            "label" : "Moderate problemer",
+            "localizedLabels" : {
+              "en" : "Moderate problems",
+              "nb" : "Moderate problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0014",
+            "label" : "Alvorlige problemer",
+            "localizedLabels" : {
+              "en" : "Severe problems",
+              "nb" : "Alvorlige problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0015",
+            "label" : "Ute av stand til å gå omkring",
+            "localizedLabels" : {
+              "en" : "Unable to walk about.",
+              "nb" : "Ute av stand til å gå omkring"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "personlig_stell",
+        "name" : "Personlig stell",
+        "localizedName" : "Personlig stell",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0006",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Self-care",
+          "nb" : "Personlig stell"
+        },
+        "localizedDescriptions" : {
+          "en" : "Issues with self-care.",
+          "nb" : "Problemer med personlig stell"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0016",
+            "label" : "Ingen problemer",
+            "localizedLabels" : {
+              "en" : "No problems",
+              "nb" : "Ingen problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0017",
+            "label" : "Små problemer",
+            "localizedLabels" : {
+              "en" : "Slight problems",
+              "nb" : "Små problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0018",
+            "label" : "Moderate problemer",
+            "localizedLabels" : {
+              "en" : "Moderate problems",
+              "nb" : "Moderate problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0019",
+            "label" : "Alvorlige problemer",
+            "localizedLabels" : {
+              "en" : "Severe problems",
+              "nb" : "Alvorlige problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0020",
+            "label" : "Ute av stand til å vaske meg eller kle meg",
+            "localizedLabels" : {
+              "en" : "Unable to wash or dress",
+              "nb" : "Ute av stand til å vaske meg eller kle meg"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "vanlige_gjøremål",
+        "name" : "Vanlige gjøremål",
+        "localizedName" : "Vanlige gjøremål",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0007",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Usual activities",
+          "nb" : "Vanlige gjøremål"
+        },
+        "localizedDescriptions" : {
+          "en" : "Issues with usual activities.",
+          "nb" : "Problemer med daglige gjøremål"
+        },
+        "annotations" : {
+          "comment" : "f.eks. arbeid, studier, husarbeid, familie- eller fritidsaktiviteter."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0021",
+            "label" : "Ingen problemer",
+            "localizedLabels" : {
+              "en" : "No problems",
+              "nb" : "Ingen problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0022",
+            "label" : "Små problemer",
+            "localizedLabels" : {
+              "en" : "Slight problems",
+              "nb" : "Små problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0023",
+            "label" : "Moderate problemer",
+            "localizedLabels" : {
+              "en" : "Moderate problems",
+              "nb" : "Moderate problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0024",
+            "label" : "Alvorlige problemer",
+            "localizedLabels" : {
+              "en" : "Severe problems",
+              "nb" : "Alvorlige problemer"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0025",
+            "label" : "Ute av stand til å utføre mine vanlige gjøremål",
+            "localizedLabels" : {
+              "en" : "Unable to do my usual activities",
+              "nb" : "Ute av stand til å utføre mine vanlige gjøremål"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "smerte_og_ubehag",
+        "name" : "Smerte og ubehag",
+        "localizedName" : "Smerte og ubehag",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0008",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Pain/discomfort",
+          "nb" : "Smerte og ubehag"
+        },
+        "localizedDescriptions" : {
+          "en" : "Issues of pain or discomfort.",
+          "nb" : "Problemer med smerte eller ubehag"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0026",
+            "label" : "Hverken smerte eller ubehag",
+            "localizedLabels" : {
+              "en" : "No pain or discomfort",
+              "nb" : "Hverken smerte eller ubehag"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0027",
+            "label" : "Litt smerte eller ubehag",
+            "localizedLabels" : {
+              "en" : "Slight pain or discomfort",
+              "nb" : "Litt smerte eller ubehag"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0028",
+            "label" : "Middels smerte eller ubehag",
+            "localizedLabels" : {
+              "en" : "Moderate pain or discomfort",
+              "nb" : "Middels smerte eller ubehag"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0029",
+            "label" : "Sterke smerter eller ubehag",
+            "localizedLabels" : {
+              "en" : "Severe pain or discomfort",
+              "nb" : "Sterke smerter eller ubehag"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0030",
+            "label" : "Svært sterke smerter eller ubehag",
+            "localizedLabels" : {
+              "en" : "Extreme pain or discomfort",
+              "nb" : "Svært sterke smerter eller ubehag"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "angst_og_depresjon",
+        "name" : "Angst og depresjon",
+        "localizedName" : "Angst og depresjon",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0009",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Anxiety/depression",
+          "nb" : "Angst og depresjon"
+        },
+        "localizedDescriptions" : {
+          "en" : "Issue with anxiety or depression.",
+          "nb" : "Problemer med angsg eller depresjon"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0031",
+            "label" : "Hverken engstelig eller deprimert",
+            "localizedLabels" : {
+              "en" : "No anxiety or depression",
+              "nb" : "Hverken engstelig eller deprimert"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 1
+          }, {
+            "value" : "at0032",
+            "label" : "Litt engstelig eller deprimert",
+            "localizedLabels" : {
+              "en" : "Slight anxiety or depression",
+              "nb" : "Litt engstelig eller deprimert"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 2
+          }, {
+            "value" : "at0033",
+            "label" : "Middels engstelig eller deprimert",
+            "localizedLabels" : {
+              "en" : "Moderate anxiety or depression",
+              "nb" : "Middels engstelig eller deprimert"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 3
+          }, {
+            "value" : "at0034",
+            "label" : "Svært engstelig eller deprimert",
+            "localizedLabels" : {
+              "en" : "Severe anxiety or depression",
+              "nb" : "Svært engstelig eller deprimert"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 4
+          }, {
+            "value" : "at0035",
+            "label" : "Ekstremt engstelig eller deprimert",
+            "localizedLabels" : {
+              "en" : "Extreme anxiety or depression",
+              "nb" : "Ekstremt engstelig eller deprimert"
+            },
+            "localizedDescriptions" : {
+              "en" : "*",
+              "nb" : "*"
+            },
+            "ordinal" : 5
+          } ]
+        } ]
+      }, {
+        "id" : "tilstand",
+        "name" : "Tilstand",
+        "localizedName" : "Tilstand",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0011",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "State",
+          "nb" : "Tilstand"
+        },
+        "localizedDescriptions" : {
+          "en" : "A 5-digit code formed from the scores of each component, with 9 indicating a missing value",
+          "nb" : "En 5-sifret kode dannet fra poengsummen til hver komponent, med 9 som indikerer en manglende verdi"
+        },
+        "annotations" : {
+          "comment" : "f.eks. 2149"
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0011]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "helsen_din_i_dag",
+        "name" : "Helsen din i dag",
+        "localizedName" : "Helsen din i dag",
+        "rmType" : "DV_COUNT",
+        "nodeId" : "at0010",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Overall health",
+          "nb" : "Helsen din i dag"
+        },
+        "localizedDescriptions" : {
+          "en" : "A self-assessment of overall health on a scale from 0 to 100",
+          "nb" : "Vi vil gjerne vite hvor god eller dårlig helsen din er I DAG.\nDenne skalaen er nummerert fra 0 til 100. 100 betyr den beste helsen du kan tenke deg. 0 betyr den dårligste helsen du kan tenke deg."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0010]/value",
+        "inputs" : [ {
+          "type" : "INTEGER",
+          "validation" : {
+            "range" : {
+              "minOp" : ">=",
+              "min" : 0,
+              "maxOp" : "<=",
+              "max" : 100
+            }
+          }
+        } ]
+      }, {
+        "id" : "time",
+        "name" : "Time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/data[at0001]/events[at0002]/time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "language",
+        "name" : "Language",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/language",
+        "inContext" : true
+      }, {
+        "id" : "encoding",
+        "name" : "Encoding",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/encoding",
+        "inContext" : true
+      }, {
+        "id" : "subject",
+        "name" : "Subject",
+        "rmType" : "PARTY_PROXY",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.eq_5d_5l.v0]/subject",
+        "inputs" : [ {
+          "suffix" : "id",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_scheme",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_namespace",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "name",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "category",
+      "rmType" : "DV_CODED_TEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/category",
+      "inputs" : [ {
+        "suffix" : "code",
+        "type" : "CODED_TEXT",
+        "list" : [ {
+          "value" : "433",
+          "label" : "event",
+          "localizedLabels" : {
+            "en" : "event",
+            "nb" : ""
+          }
+        } ],
+        "terminology" : "openehr"
+      } ],
+      "inContext" : true
+    } ]
+  }
+}
